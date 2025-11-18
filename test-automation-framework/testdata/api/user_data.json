@@ -1,0 +1,87 @@
+{
+  "valid_users": [
+    {
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "password": "securePassword123",
+      "role": "user",
+      "department": "Engineering",
+      "phone": "+1-555-0123"
+    },
+    {
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "password": "anotherSecurePass456",
+      "role": "admin",
+      "department": "Management",
+      "phone": "+1-555-0124"
+    },
+    {
+      "name": "Bob Johnson",
+      "email": "bob.johnson@example.com",
+      "password": "bobsPassword789",
+      "role": "user",
+      "department": "Sales",
+      "phone": "+1-555-0125"
+    }
+  ],
+  "invalid_users": [
+    {
+      "name": "",
+      "email": "invalid-email",
+      "password": "123",
+      "expected_errors": ["Name is required", "Invalid email format", "Password too short"]
+    },
+    {
+      "name": "Test User",
+      "email": "",
+      "password": "validPassword123",
+      "expected_errors": ["Email is required"]
+    },
+    {
+      "name": "Another User",
+      "email": "user@example.com",
+      "password": "",
+      "expected_errors": ["Password is required"]
+    }
+  ],
+  "update_data": {
+    "name": "Updated Name",
+    "email": "updated@example.com",
+    "department": "Updated Department",
+    "phone": "+1-555-9999"
+  },
+  "search_terms": [
+    {
+      "term": "John",
+      "expected_results": 1
+    },
+    {
+      "term": "example.com",
+      "expected_results": 3
+    },
+    {
+      "term": "Engineering",
+      "expected_results": 1
+    }
+  ],
+  "authentication": {
+    "valid_login": {
+      "email": "john.doe@example.com",
+      "password": "securePassword123"
+    },
+    "invalid_login": {
+      "email": "invalid@example.com",
+      "password": "wrongpassword"
+    },
+    "admin_login": {
+      "email": "jane.smith@example.com",
+      "password": "anotherSecurePass456"
+    }
+  },
+  "password_change": {
+    "old_password": "securePassword123",
+    "new_password": "newSecurePassword456",
+    "confirm_password": "newSecurePassword456"
+  }
+}

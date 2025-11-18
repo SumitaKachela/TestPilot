@@ -1,0 +1,44 @@
+# Test data for UI login scenarios
+
+valid_users:
+  standard_user:
+    username: "user@example.com"
+    password: "password123"
+    expected_welcome: "Welcome, User!"
+  
+  admin_user:
+    username: "admin@example.com"
+    password: "admin123"
+    expected_welcome: "Welcome, Admin!"
+
+invalid_users:
+  wrong_password:
+    username: "user@example.com"
+    password: "wrongpassword"
+    expected_error: "Invalid credentials"
+  
+  wrong_email:
+    username: "invalid@example.com"
+    password: "password123"
+    expected_error: "User not found"
+  
+  empty_username:
+    username: ""
+    password: "password123"
+    expected_error: "Username is required"
+  
+  empty_password:
+    username: "user@example.com"
+    password: ""
+    expected_error: "Password is required"
+
+test_scenarios:
+  successful_login:
+    description: "Test successful login with valid credentials"
+    user_type: "standard_user"
+    expected_redirect: "/dashboard"
+  
+  failed_login:
+    description: "Test failed login with invalid credentials"
+    user_type: "wrong_password"
+    expected_page: "/login"
