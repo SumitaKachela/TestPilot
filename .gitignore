@@ -144,6 +144,9 @@ ENV/
 env.bak/
 venv.bak/
 
+# Odoo credentials
+odoo_inventory.json
+
 # Spyder project settings
 .spyderproject
 .spyproject
